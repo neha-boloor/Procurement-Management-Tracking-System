@@ -1,0 +1,26 @@
+<div class="container-fluid text-center" style="background:#e74c3c; min-height:400px; padding-top: 100px; padding-bottom: 50px;">
+    <div class="row">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <div class="event-card rounded" style="padding:30px;">
+                <div class="container">
+                    <div class="row">
+                        <!-- <div class="col-lg-1"></div> -->
+                        <div class="col-lg-4 text-center">
+                            <img src="images/logo.png" class="home-logo" />
+                            <h1 class="pacifico">Artists' Forum</h1>
+                            <h3 class="cuprum left" style="padding-left:10px;">Latest News</h3>
+                            <div ng-repeat="item in news" ng-bind="item.title" class="news-item">
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                        	<div  ng-include="'html/partials/cover-content.html'" class="cuprum font20"></div>
+                        </div>
+                        <div class="col-lg-1"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+</div>

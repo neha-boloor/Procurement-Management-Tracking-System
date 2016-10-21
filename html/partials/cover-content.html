@@ -1,0 +1,12 @@
+<p class="font30" style="margin-top: 20px;">Welcome to the website of Artists' Forum, NITK!</p>
+<hr />
+<div ng-if="events != undefined">
+Upcoming Events
+<hr style="margin-top:5px; margin-bottom: 5px;"/>
+
+<div class="event-listing" ng-repeat="event in events track by $index" ng-if="$index<3">{{event.name}}</div>
+
+<a href="events.html">See more ></a>
+</div>
+<a class="twitter-timeline" href="https://twitter.com/AF_NITK" data-widget-id="722335017343533056">Tweets by @AF_NITK</a>
+

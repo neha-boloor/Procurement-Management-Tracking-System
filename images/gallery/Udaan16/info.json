@@ -1,0 +1,16 @@
+{
+    "albumName": "Incident 2015",
+    "photos": [{
+        "name": "1.png",
+        "caption": "Kite flying"
+    }, {
+        "name": "2.jpg",
+        "caption": "Beach events and competitions"
+    }, {
+        "name": "3.jpg",
+        "caption": "Fun games"
+    }, {
+        "name": "4.jpg",
+        "caption": "Sand art"
+    }]
+}

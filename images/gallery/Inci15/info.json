@@ -1,0 +1,19 @@
+{
+    "albumName": "Incident 2015",
+    "photos": [{
+        "name": "1.jpg",
+        "caption": "Main Building Entrance"
+    }, {
+        "name": "2.jpg",
+        "caption": "Tribute to R. K. Laxman"
+    }, {
+        "name": "3.jpg",
+        "caption": "Incident 2015 work"
+    }, {
+        "name": "4.jpg",
+        "caption": "Caricature workshop"
+    }, {
+        "name": "5.jpg",
+        "caption": "Face painting competition"
+    }]
+}

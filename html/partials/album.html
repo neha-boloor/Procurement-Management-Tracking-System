@@ -1,0 +1,24 @@
+<article ng-controller="albumCtrl">
+    <div class="container-fluid text-center" style="background: #16a085; padding-top: 100px; padding-bottom: 50px;">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 ng-if="::photos" class="pacifico white" style="text-shadow: 0 5px 5px #222;">{{::albumName}}</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-10">
+                <div class="event-card" style="text-align: center !important; background: rgba(255,255,255,0.3); box-shadow: 0 0 10px #222; border-radius: 20px;">
+                    <div  ng-if="::photos" ng-repeat="photo in photos" class="photo-card">
+                    <img ng-src="{{albumUrl}}/{{photo.name}}" class="img-responsive" style="width:100%; max-width: 600px;"><br/>
+                    <div style="margin:10px; font-weight: bold;" class="lobster font20" ng-if="photo.caption">{{photo.caption}}</div>
+                    </div>
+                    <div ng-if="photos==undefined && albumLoad==true">
+                        <h1>Album not found!</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-1"></div>
+        </div>
+    </div>
+</article>

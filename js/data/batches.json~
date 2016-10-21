@@ -1,0 +1,19 @@
+{
+    "batches": [{
+        "name": "Batch of 2016",
+        "slug": "2016",
+        "thumbUrl": "images/members/thumbs/thumbnail.jpg"
+    }, {
+        "name": "Batch of 2017",
+        "slug": "2017",
+        "thumbUrl": "images/members/thumbs/thumbnail.png"
+    }, {
+        "name": "Batch of 2018",
+        "slug": "2018",
+        "thumbUrl": "images/members/thumbs/thumbnail.png"
+    }, {
+        "name": "Batch of 2019",
+        "slug": "2019",
+        "thumbUrl": "images/members/thumbs/thumbnail.png"
+    }]
+}

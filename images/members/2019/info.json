@@ -1,0 +1,16 @@
+{
+    "batchName": "Batch of 2019",
+    "members": [{
+        "name": "Harry Potter",
+        "photo": "thumbnail.png"
+    }, {
+        "name": "Harry Potter",
+        "photo": "thumbnail.png"
+    }, {
+        "name": "Harry Potter",
+        "photo": "thumbnail.png"
+    }, {
+        "name": "Harry Potter",
+        "photo": "thumbnail.png"
+    }]
+}

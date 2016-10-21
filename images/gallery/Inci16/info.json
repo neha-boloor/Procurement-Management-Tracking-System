@@ -1,0 +1,28 @@
+{
+    "albumName": "Incident 2016",
+    "photos": [{
+        "name": "1.jpg",
+        "caption": "Main Lobby Decoration."
+    }, {
+        "name": "2.jpg",
+        "caption": "3D Road Art"
+    }, {
+        "name": "3.jpg",
+        "caption": "Kalakriti- the art exhibition"
+    }, {
+        "name": "4.jpg",
+        "caption": "Kalakriti Inaugration"
+    }, {
+        "name": "5.jpg",
+        "caption": "Charcoal Drawing Workshop"
+    }, {
+        "name": "6.jpg",
+        "caption": "Line Art Workshop"
+    }, {
+        "name": "7.jpg",
+        "caption": "Clay Modelling Workshop"
+    }, {
+        "name": "8.jpg",
+        "caption": "Face Painting Competition"
+    }]
+}

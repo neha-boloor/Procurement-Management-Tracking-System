@@ -1,0 +1,33 @@
+{
+    "albums": [{
+        "name": "Incident 2016",
+        "albumUrl": "images/gallery/Inci16",
+        "description": "",
+		"thumbnail": "thumbnail.jpg",
+		"folderName": "Inci16"
+    }, {
+        "name": "Udaan 2016",
+        "albumUrl": "images/gallery/Udaan16",
+        "description": "",
+        "thumbnail": "thumbnail.jpg",
+        "folderName": "Udaan16"
+    }, {
+        "name": "Engineer 2015",
+        "albumUrl": "images/gallery/Engi15",
+        "description": "",
+        "thumbnail": "thumbnail.jpg",
+        "folderName": "Engi15"
+    }, {
+        "name": "Incident 2015",
+        "albumUrl": "images/gallery/Inci15",
+        "description": "",
+        "thumbnail": "thumbnail.jpg",
+        "folderName": "Inci15"
+    }, {
+        "name": "Incident 2014",
+        "albumUrl": "images/gallery/Inci14",
+        "description": "",
+        "thumbnail": "thumbnail.jpg",
+        "folderName": "Inci14"
+    }]
+}

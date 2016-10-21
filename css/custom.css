@@ -1,0 +1,99 @@
+/* author:maligndrome */
+.row {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+body { overflow-x: hidden;}
+.pacifico{
+	font-family: 'Pacifico', cursive !important;
+}
+.cuprum{
+	font-family: 'Cuprum', sans-serif !important;
+}
+.lobster{
+	font-family: 'Lobster Two', cursive !important;
+}
+.white{
+	color:white !important;
+}
+.gray{
+	color:#666 !important;
+}
+.dark-sea-green{
+	color:#90C695 !important;
+}
+.font30{
+	font-size: 30px !important;
+}
+.font20{
+	font-size: 20px !important;
+}
+.event-card{
+	width:100%;
+	background: white;
+	box-shadow: 5px 5px 15px black;
+	padding: 20px;
+	text-align: left !important;
+	margin-top:20px !important;
+}
+.rounded{
+	border-radius: 20px;
+}
+.album-card{
+	max-width:300px;
+	background: white;
+	box-shadow: 5px 5px 15px black;
+	padding:30px;
+	text-align: center !important;
+	margin:20px !important;
+	display: inline-block;
+}
+.thumbnail{
+	height:200px;
+	padding:10px;
+	background:white;
+	box-shadow: 0 0 10px black;
+	margin:10px;
+}
+.photo-card{
+	padding: 10px;
+	box-shadow: 0 0 10px black;
+	margin: 10px;
+	display: inline-block;
+	background: white;
+}
+.event-listing{
+	margin-left:10px;
+	font-size: 18px;
+}
+.home-logo{
+	width:90%;
+	max-width:250px;
+	box-shadow: 0 0px 20px black;
+	border-radius:150px;
+}
+.carousel-indicators li{
+	border:1px solid black !important;
+}
+.carousel-indicators .active{
+	background: black !important;
+}
+.carousel-control .fa-lg{
+	position: absolute;
+    top: 50%;
+    z-index: 5;
+    display: inline-block;
+    color:black;
+}
+.news-item{
+	text-align: left;
+	padding:10px;
+	border-top:1px solid #ccc;
+}
+.left{
+	text-align: left !important;
+}
+.carousel-control.left, 
+.carousel-control.right {
+    background-image: none !important;
+}

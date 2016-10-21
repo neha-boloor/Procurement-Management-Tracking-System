@@ -1,0 +1,116 @@
+{
+    "batchName": "Batch of 2018",
+  "members": [
+    {
+      "branch": "CV",
+      "name": "Abhishek Kumar",
+      "photo": "Abhishek.jpg"
+    },
+    {
+      "branch": "EE",
+      "name": "Aditya Anurag",
+      "photo": "Aditya.jpg"
+    },
+    {
+      "branch": "CV",
+      "name": "Amal Johny",
+      "photo": "Amal.jpg"
+    },
+    {
+      "branch": "CV",
+      "name": "Apee Regmi",
+      "photo": "Apee.jpg"
+    },
+    {
+      "branch": "ME",
+      "name": "Giriraj S Heda",
+      "photo": "Giriraj.jpg"
+    },
+    {
+      "branch": "CS",
+      "name": "Kavya Atmakuri",
+      "photo": "Kavya.jpg"
+    },
+    {
+      "branch": "EC",
+      "name": "Megha Mantur",
+      "photo": "Megha.jpg"
+    },
+    {
+      "branch": "CS",
+      "name": "Navya S Shetty",
+      "photo": "Navya.jpg"
+    },
+    {
+      "branch": "IT",
+      "name": "Neha B",
+      "photo": "Neha.jpg"
+    },
+    {
+      "branch": "EE",
+      "name": "Nishchita Khaza",
+      "photo": "Nishchita.jpg"
+    },
+    {
+      "branch": "CV",
+      "name": "Prerith M R Arakere",
+      "photo": "Prerith.jpg"
+    },
+    
+    {
+      "branch": "IT",
+      "name": "Rama Shanbhag",
+      "photo": "Rama.jpg"
+    },
+    {
+      "branch": "CS",
+      "name": "Samanvita Sastry",
+      "photo": "Samanvita.jpg"
+    },
+    {
+      "branch": "EC",
+      "name": "Samhita Varambally",
+      "photo": "Samhita.jpg"
+    },
+     { "branch": "CS",
+      "name": "Sangeetha G S",
+      "photo": "Sangeetha.jpg"
+    },
+    {
+      "branch": "EC",
+      "name": "Sanmathi Kamath",
+      "photo": "Sanmathi.jpg"
+    },
+    {
+      "branch": "EE",
+      "name": "Sonali M Naik",
+      "photo": "Sonali.jpg"
+    },
+    {
+      "branch": "IT",
+      "name": "Srivalya Elluru",
+      "photo": "Srivalya.jpg"
+    },
+    {
+      "branch": "CS",
+      "name": "Vignesh R",
+      "photo": "Vignesh.jpg"
+    },
+    {
+      "branch": "CH",
+      "name": "Vindhya K",
+      "photo": "Vindhya.jpg"
+    },
+    {
+      "branch": "CH",
+      "name": "Vishal Mbac",
+      "photo": "Vishal.jpg"
+    },
+    {
+      "branch": "CH",
+      "name": "Yash Lara",
+      "photo": "Yash.jpg"
+    }
+   
+  ]
+}

@@ -1,0 +1,24 @@
+<article ng-controller="membersCtrl">
+    <div class="container-fluid text-center" style="background: #34495e; padding-top: 100px; padding-bottom: 50px;">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="pacifico white" style="text-shadow: 0 5px 5px #222;">Members</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-10">
+            <div ng-repeat="batch in batches" style="display: inline-block;">
+                <a href="batch.html?name={{::batch.slug}}">
+                    <div class="album-card">
+                        <img ng-src="{{batch.thumbUrl}}" class="thumbnail" />
+                        <hr />
+                        <h3 class="cuprum" ng-bind="::batch.name"></h3>
+                    </div>
+                </a>
+             </div>
+            </div>
+            <div class="col-lg-1"></div>
+        </div>
+    </div>
+</article>

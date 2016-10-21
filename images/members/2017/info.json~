@@ -1,0 +1,140 @@
+{
+    "batchName": "Batch of 2017",
+  "members": [
+    {
+      "branch": "CH",
+      "name": "Aabha Gopan",
+      "photo": "Aabha.jpg"
+    },
+    {
+      "branch": "CS",
+      "name": "Amita Kamath",
+      "photo": "Amita.jpg"
+    },
+    {
+      "branch": "CS",
+      "name": "Chandana Vegala",
+      "photo": "Chandana.jpg"
+    },
+    {
+      "branch": "ME",
+      "name": "Dayananda Kori",
+      "photo": "dayanand.jpg"
+    },
+    {
+      "branch": "EE",
+      "name": "G Balabhavya",
+      "photo": "Bhavya.jpg"
+    },
+    {
+      "branch": "IT",
+      "name": "Gunjan Kothari ",
+      "photo": "Gunjan.jpg"
+    },
+    {
+      "branch": "IT",
+      "name": "Kokila Rajaram",
+      "photo": "Kokila.jpg"
+    },
+    {
+      "branch": "CH",
+      "name": "Krathika Bhat",
+      "photo": "Krathika.jpg"
+    },
+    {
+      "branch": "ME",
+      "name": "M Muzammil",
+      "photo": "Muzammil.jpg"
+    },
+    {
+      "branch": "MT",
+      "name": "Manish Kumar",
+      "photo": "Manish.jpg"
+    },
+    {
+      "branch": "MT",
+      "name": "Manoj S Gowda",
+      "photo": "Manoj.jpg"
+    },
+    {
+      "branch": "IT",
+      "name": "Navita Singhal",
+      "photo": "navita.jpg"
+    },
+    {
+      "branch": "IT",
+      "name": "Nikhita Vinay H",
+      "photo": "Nikhita.jpg"
+    },
+    {
+      "branch": "",
+      "name": "Pankaj Kumar",
+      "photo": "Pankaj.jpg"
+    },
+    {
+      "branch": "ME",
+      "name": "Prateek Jha",
+      "photo": "Prateek.jpg"
+    },
+    {
+      "branch": "EE",
+      "name": "R L Prasanna ",
+      "photo": "Prasanna.jpg"
+    },    
+    {
+      "branch": "CV",
+      "name": "Sahara Sedhain",
+      "photo": "Sahara.jpg"
+    },
+    {
+      "branch": "MT",
+      "name": "Sahil Hegde",
+      "photo": "Sahil.jpg"
+    },
+    {
+      "branch": "CH",
+      "name": "Sarthak Acharya",
+      "photo": "Sarthak.jpg"
+    },
+    {
+      "branch": "ME",
+      "name": "Satyesh Awasthi",
+      "photo": "Satyesh.jpg"
+    },
+    {
+      "branch": "CS",
+      "name": "Shrishti A K",
+      "photo": "Shrishti.jpg"
+    },
+    {
+      "branch": "CH",
+      "name": "Siddhartha S K",
+      "photo": "Sid.jpg"
+    },
+     { "branch": "CS",
+      "name": "Smrithi Murali",
+      "photo": "smrithi.jpg"
+    },
+    {
+      "branch": "MN",
+      "name": "Vignesh Moorthy",
+      "photo": "vignesh.jpg"
+    },
+    {
+      "branch": "CS",
+      "name": "Vishakha S R",
+      "photo": "Vishaka.jpg"
+    },
+    {
+      "branch": "MCA",
+      "name": "Yamini Shakya",
+      "photo": "Yamini.jpg"
+    },
+    {
+      "branch": "ME",
+      "name": "Yuvraj Singh",
+      "photo": "Yuvraj.jpg"
+    }
+   
+  ]
+}

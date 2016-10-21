@@ -1,0 +1,23 @@
+{
+    "events": [{
+        "name": "EventName",
+        "imgUrl": "images/events/placeholder.png",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque a diam mauris. Cras eu nisl dignissim, fringilla mi ac, venenatis purus. Cras scelerisque sit amet leo vel lobortis. Praesent luctus tempor diam. Sed hendrerit dolor quis ante efficitur, in scelerisque arcu interdum. Nunc eget ullamcorper ipsum, nec finibus leo. Vestibulum ac ex tortor. Fusce vulputate accumsan porta.",
+        "contact": "Yuvraj Singh, +91-7795571411"
+    }, {
+        "name": "EventName",
+        "imgUrl": "images/events/placeholder.png",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque a diam mauris. Cras eu nisl dignissim, fringilla mi ac, venenatis purus. Cras scelerisque sit amet leo vel lobortis. Praesent luctus tempor diam. Sed hendrerit dolor quis ante efficitur, in scelerisque arcu interdum. Nunc eget ullamcorper ipsum, nec finibus leo. Vestibulum ac ex tortor. Fusce vulputate accumsan porta.",
+        "contact": "Yuvraj Singh, +91-7795571411"
+    }, {
+        "name": "EventName",
+        "imgUrl": "images/events/placeholder.png",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque a diam mauris. Cras eu nisl dignissim, fringilla mi ac, venenatis purus. Cras scelerisque sit amet leo vel lobortis. Praesent luctus tempor diam. Sed hendrerit dolor quis ante efficitur, in scelerisque arcu interdum. Nunc eget ullamcorper ipsum, nec finibus leo. Vestibulum ac ex tortor. Fusce vulputate accumsan porta.",
+        "contact": "Yuvraj Singh, +91-7795571411"
+    }, {
+        "name": "EventName",
+        "imgUrl": "images/events/placeholder.png",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque a diam mauris. Cras eu nisl dignissim, fringilla mi ac, venenatis purus. Cras scelerisque sit amet leo vel lobortis. Praesent luctus tempor diam. Sed hendrerit dolor quis ante efficitur, in scelerisque arcu interdum. Nunc eget ullamcorper ipsum, nec finibus leo. Vestibulum ac ex tortor. Fusce vulputate accumsan porta.",
+        "contact": "Yuvraj Singh, +91-7795571411"
+    }]
+}

@@ -1,0 +1,24 @@
+<article ng-controller="galleryCtrl">
+    <div class="container-fluid text-center" style="background: #16a085; padding-top: 100px; padding-bottom: 50px;">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="pacifico white" style="text-shadow: 0 5px 5px #222;">Gallery</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-10">
+            <div ng-repeat="album in gallery" style="display: inline-block;">
+                <a href="album.html?name={{::album.folderName}}">
+                    <div class="album-card">
+                        <img ng-src="{{album.albumUrl}}/{{album.thumbnail}}" class="thumbnail" />
+                        <hr />
+                        <h3 class="cuprum" ng-bind="::album.name"></h3>
+                    </div>
+                </a>
+             </div>
+            </div>
+            <div class="col-lg-1"></div>
+        </div>
+    </div>
+</article>

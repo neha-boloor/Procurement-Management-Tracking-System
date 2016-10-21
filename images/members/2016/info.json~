@@ -1,0 +1,76 @@
+{
+    "batchName": "Batch of 2016",
+    "members": [{
+        "name": "Anuj Baranwal",
+        "photo": "anuj_baranwal.jpg",
+        "branch": "Mechanical Engineering"
+    }, {
+        "name": "Arya Aishwarya",
+        "photo": "arya_aishwarya.jpg",
+        "branch": "Mechanical Engineering"
+    }, {
+        "name": "Aswin K V",
+        "photo": "aswin_kv.jpg",
+        "branch": "Mechanical Engineering"
+    }, {
+        "name": "Darshan Balakrishna",
+        "photo": "darshan_balakrishna.jpg",
+        "branch": "Mechanical Engineering"
+    }, {
+        "name": "Hardik Patel",
+        "photo": "hardik_patel.jpg",
+        "branch": "Mechanical Engineering"
+    }, {
+        "name": "Haripriya Nair",
+        "photo": "haripriya_nair.jpg",
+        "branch": "Mechanical Engineering"
+    }, {
+        "name": "Harshitha Nagaraj",
+        "photo": "harshitha_nagaraj.jpg",
+        "branch": "Mechanical Engineering"
+    }, {
+        "name": "Manasa Sreekesh",
+        "photo": "manasa.jpg",
+        "branch": "Computer Engineering"
+    }, {
+        "name": "Maonica Rao",
+        "photo": "maonica_rao.jpg",
+        "branch": "Mechanical Engineering"
+    }, {
+        "name": "Nathan Pereira",
+        "photo": "nathan_pereira.jpg",
+        "branch": "Mechanical Engineering"
+    }, {
+        "name": "Navneet Naman",
+        "photo": "navneet_naman.jpg",
+        "branch": "Mechanical Engineering"
+    }, {
+        "name": "Rakesh Mosalpuri",
+        "photo": "rakesh_mosalpuri.jpg",
+        "branch": "Mechanical Engineering"
+    }, {
+        "name": "Ranjan Tiwari",
+        "photo": "ranjan_tiwari.jpg",
+        "branch": "Mechanical Engineering"
+    }, {
+        "name": "Shon Shaji",
+        "photo": "shon_shaji.jpg",
+        "branch": "Mechanical Engineering"
+    }, {
+        "name": "Sneha Oommen",
+        "photo": "sneha_oommen.jpg",
+        "branch": "Mechanical Engineering"
+    }, {
+        "name": "Umakant Patel",
+        "photo": "umakant_patel.jpg",
+        "branch": "Mechanical Engineering"
+    }, {
+        "name": "Vedesh Prabhu",
+        "photo": "vedesh_prabhu.jpg",
+        "branch": "Mechanical Engineering"
+    }, {
+        "name": "Vinay Sundar Rajan",
+        "photo": "vinay_sr.jpg",
+        "branch": "Mechanical Engineering"
+    }]
+}
