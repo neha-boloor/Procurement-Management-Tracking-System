@@ -203,6 +203,7 @@ CREATE TABLE `tender` (
   `Bid_open_date` date NOT NULL,
   `Pr_no` int(11) NOT NULL,
   `Status_id` int(11) NOT NULL,
+  `Last_updated` date NOT NULL,
   PRIMARY KEY (`T_id`),
   KEY `Pr_no` (`Pr_no`),
   KEY `Status_id` (`Status_id`),
@@ -259,4 +260,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-10-22 13:13:43
+-- Dump completed on 2016-10-22 13:36:10
