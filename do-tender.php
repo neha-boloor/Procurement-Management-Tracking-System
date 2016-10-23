@@ -32,7 +32,7 @@
 
   }
   div.col-sm-9 div {
-    height: 950px;
+    height: 450px;
     font-size: 18px;
     box-shadow: 0 2px 10px black;
   }
@@ -89,29 +89,23 @@
     <div class="row">
       <nav class="col-sm-3" id="myScrollspy" >
         <ul class="nav nav-pills nav-stacked" style="font-weight:900;">
-          <li class="active"><a href="#section1">View Ongoing Requests</a></li>
-          <li ><a href="#section2" >View Previous Requests</a></li>
+          <li class="active"><a href="#section1">Enter New Tender</a></li>
 
         </ul>
       </nav>
       <div class="col-sm-9">
         <div id="section1">
-          <h1 style="margin-left:20px;margin-top:30px;padding-top:30px;">Ongoing Requests</h1>
+          <h1 style="margin-left:20px;margin-top:30px;padding-top:30px;">Enter Tender Details</h1>
           <p style="margin-left:20px;margin-top:10px;">
-            <object type="text/html" data="html/partials/do-view-card.html" width="800px" height="600px" style="overflow:auto;border:0px ridge blue">
+            <form method="post" action="#">
+            <object type="text/html" data="html/partials/do-enter-tender.html" width="800px" height="250px" style="overflow:auto;border:0px ridge blue">
             </object>
+            <div style="text-align:center;box-shadow: 0 0px 0px black;">
+            <input type="submit"/>
+          </div>
+          </form>
           </p>
         </div>
-        <div id="section2">
-          <h1 style="margin-left:20px;margin-top:50px; padding-top:30px;">Completed Requests</h1>
-          <p>
-            <object type="text/html" data="html/partials/do-history-card.html" width="800px" height="600px" style="overflow:auto;border:0px ridge blue">
-            </object>
-          </p>
-        </div>
-
-
-
       </div>
     </div>
   </div>
