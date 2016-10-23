@@ -1,63 +1,63 @@
 body {
-      background-color: #1abc9c; /* Green */
-      /*color: #ffffff;*/
-  }
-   .bg-4 {
-      background-color: #2f2f2f; /* Black Gray */
-      color: #fff;
-  }
-  .container-f {
-      padding-top: 10px;
-      padding-bottom: 10px;
-  }
+  background-color: #1abc9c; /* Green */
+  /*color: #ffffff;*/
+}
+.bg-4 {
+  background-color: #2f2f2f; /* Black Gray */
+  color: #fff;
+}
+.container-f {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
 
 #login-dp{
-    min-width: 250px;
-    padding: 14px 14px 0;
-    overflow:hidden;
-    background-color:rgba(255,255,255,.8);
+  min-width: 250px;
+  padding: 14px 14px 0;
+  overflow:hidden;
+  background-color:rgba(255,255,255,.8);
 }
 #login-dp .help-block{
-    font-size:12px
+  font-size:12px
 }
 #login-dp .bottom{
-    background-color:rgba(255,255,255,.8);
-    border-top:1px solid #ddd;
-    clear:both;
-    padding:14px;
+  background-color:rgba(255,255,255,.8);
+  border-top:1px solid #ddd;
+  clear:both;
+  padding:14px;
 }
 #login-dp .social-buttons{
-    margin:12px 0
+  margin:12px 0
 }
 #login-dp .social-buttons a{
-    width: 49%;
+  width: 49%;
 }
 #login-dp .form-group {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 .btn-fb{
-    color: #fff;
-    background-color:#3b5998;
+  color: #fff;
+  background-color:#3b5998;
 }
 .btn-fb:hover{
-    color: #fff;
-    background-color:#496ebc
+  color: #fff;
+  background-color:#496ebc
 }
 .btn-tw{
-    color: #fff;
-    background-color:#55acee;
+  color: #fff;
+  background-color:#55acee;
 }
 .btn-tw:hover{
-    color: #fff;
-    background-color:#59b5fa;
+  color: #fff;
+  background-color:#59b5fa;
 }
 @media(max-width:768px){
-    #login-dp{
-        background-color: inherit;
-        color: #fff;
-    }
-    #login-dp .bottom{
-        background-color: inherit;
-        border-top:0 none;
-    }
+  #login-dp{
+    background-color: inherit;
+    color: #fff;
+  }
+  #login-dp .bottom{
+    background-color: inherit;
+    border-top:0 none;
+  }
 }
