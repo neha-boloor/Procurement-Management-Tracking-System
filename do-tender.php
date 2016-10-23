@@ -4,12 +4,18 @@
   <title>proKnap|Dealing Officer</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link href="css/custom.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="icon" href="images/logo-png.png" type="image/png">
-  <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link type="image/png" rel="icon" href="https://localhost/proknap/images/logo-png.png" >
+  <link type="text/css" href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link type="text/css" href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link type="text/css" href="https://localhost/proknap/css/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link type="text/css" href="https://localhost/proknap/css/custom.css" rel="stylesheet">
+  <link type="text/css" href="https://localhost/proknap/css/bootstrap.min.css" rel="stylesheet">
+  <link type="text/css" href="https://localhost/proknap/css/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link type="text/css" href='https://fonts.googleapis.com/css?family=Pacifico|Cuprum|Lobster+Two' rel='stylesheet' type='text/css'>
+  <link type="text/css" rel="stylesheet" href="https://localhost/proknap/loginstyle.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link href="css/font-awesome/css/font-awesome.min.css" rel="stylesheet">
@@ -32,7 +38,7 @@
 
   }
   div.col-sm-9 div {
-    height: 950px;
+    height: 450px;
     font-size: 18px;
     box-shadow: 0 2px 10px black;
   }
@@ -89,29 +95,23 @@
     <div class="row">
       <nav class="col-sm-3" id="myScrollspy" >
         <ul class="nav nav-pills nav-stacked" style="font-weight:900;">
-          <li class="active"><a href="#section1">View Ongoing Requests</a></li>
-          <li ><a href="#section2" >View Previous Requests</a></li>
+          <li class="active"><a href="#section1">Enter New Tender</a></li>
 
         </ul>
       </nav>
       <div class="col-sm-9">
         <div id="section1">
-          <h1 style="margin-left:20px;margin-top:30px;padding-top:30px;">Ongoing Requests</h1>
+          <h1 style="margin-left:20px;margin-top:30px;padding-top:30px;">Enter Tender Details</h1>
           <p style="margin-left:20px;margin-top:10px;">
-            <object type="text/html" data="html/partials/do-view-card.html" width="800px" height="600px" style="overflow:auto;border:0px ridge blue">
+            <form method="post" action="#">
+            <object type="text/html" data="html/partials/do-enter-tender.html" width="800px" height="250px" style="overflow:auto;border:0px ridge blue">
             </object>
+            <div style="text-align:center;box-shadow: 0 0px 0px black;">
+            <input type="submit"/>
+          </div>
+          </form>
           </p>
         </div>
-        <div id="section2">
-          <h1 style="margin-left:20px;margin-top:50px; padding-top:30px;">Completed Requests</h1>
-          <p>
-            <object type="text/html" data="html/partials/do-history-card.html" width="800px" height="600px" style="overflow:auto;border:0px ridge blue">
-            </object>
-          </p>
-        </div>
-
-
-
       </div>
     </div>
   </div>
