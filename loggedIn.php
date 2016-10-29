@@ -59,8 +59,7 @@
            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Logged In</b> <span class="caret"></span></a>
                     <ul id="login-dp" class="dropdown-menu">   <li><a href="#">Function1</a></li>
                        <li><a href="#">Function2</a></li>
-                       <li><a href="#">Function3</a></li>
-                       <li><a href="#">Function4</a></li>
+                      
                        <li></br></li>
                     </ul>
          </li>

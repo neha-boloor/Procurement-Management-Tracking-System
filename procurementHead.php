@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>proKnap|Indentor</title>
+  <title>proKnap|Procurement Head</title>
   <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link type="image/png" rel="icon" href="https://localhost/proknap/images/logo-png.png" >
   <link type="text/css" href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
@@ -20,18 +20,20 @@
   body {
     position: relative;
   }
+  a{
+    color:white;
+  }
   ul.nav-pills {
     top: 100px;
     position: fixed;
-
   }
   div.col-sm-9 div {
     height: 950px;
     font-size: 18px;
     box-shadow: 0 2px 10px black;
   }
-  #section1 {color: #fff; background-color: #ff9800;}
-  #section2 {color: #fff; background-color: #673ab7;}
+  #section1 {color: #fff; background-color: #e3d6c6;}
+  #section2 {color: #fff; background-color: #edd5d1;}
 
 
   @media screen and (max-width: 810px) {
@@ -46,7 +48,7 @@
   session_start();
  ?>
 
-<body class="loggedin" data-spy="scroll" data-target="#myScrollspy" data-offset="20">
+<body class="loggedin" data-spy="scroll" data-target="#myScrollspy" data-offset="20" style="background-color:#ff8c00">
   <nav class="navbar navbar-default navbar-inverse" role="navigation"style="box-shadow: 0 2px 10px black;">
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
@@ -84,38 +86,44 @@
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>
-
-
-  <body data-spy="scroll" data-target="#myScrollspy" data-offset="20">
-
-    <div class="container">
-      <div class="row">
-        <nav class="col-sm-3" id="myScrollspy">
-          <ul class="nav nav-pills nav-stacked">
-            <li class="active"><a href="#section1">View Requests</a></li>
-            <li><a href="#section2">Add Requests</a></li>
-
-
-          </ul>
-        </nav>
-        <div class="col-sm-9">
-          <div id="section1">
-            <h1>Requests</h1>
-            <p><?php echo $_SESSION["user_name"]; ?>
-              <object type="text/html" data="html/partials/do-view-card.php" width="800px" height="600px" style="overflow:auto;border:0px ridge blue;margin-left=30px">
-              </object></p>
-          </div>
-          <div id="section2">
-            <h1 style="margin-left=30px;padding-top=30">Add Requests</h1>
-            <p>
-              <object type="text/html" data="html/partials/add_req.php" width="800px" height="650px" style="overflow:auto;border:0px ridge blue">
-              </object>
-            </p>
-          </div>
-
+  <div class="container">
+    <div class="row">
+      <nav class="col-sm-3" id="myScrollspy" >
+        <ul class="nav nav-pills nav-stacked" style="font-weight:900;">
+          <li class="active"><a href="#section1">View Ongoing Requests</a></li>
+          <li ><a href="#section2" >View Dealing Officers' workload</a></li>
+          <li ><a href="#section3" >Assign work</a></li>
+        </ul>
+      </nav>
+      <div class="col-sm-9">
+        <div id="section1">
+          <h1 style="margin-left:20px;margin-top:30px;padding-top:30px;">Ongoing Requests</h1>
+          <p style="margin-left:20px;margin-top:10px;">
+            <object type="text/html" data="html/partials/do-view-card.php" width="800px" height="600px" style="overflow:auto;border:0px ridge blue">
+            </object>
+          </p>
         </div>
+        <div id="section2">
+          <h1 style="margin-left:20px;margin-top:50px; padding-top:30px;">Completed Requests</h1>
+          <p>
+            <object type="text/html" data="html/partials/do-history-card.php" width="800px" height="600px" style="overflow:auto;border:0px ridge blue">
+            </object>
+          </p>
+        </div>
+
+        <div id="section3">
+          <h1 style="margin-left:20px;margin-top:50px; padding-top:30px;">Completed Requests</h1>
+          <p>
+            <object type="text/html" data="html/partials/do-history-card.php" width="800px" height="600px" style="overflow:auto;border:0px ridge blue">
+            </object>
+          </p>
+        </div>
+
+
+
       </div>
     </div>
+  </div>
 
-  </body>
-  </html>
+</body>
+</html>

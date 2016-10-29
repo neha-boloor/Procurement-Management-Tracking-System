@@ -88,12 +88,14 @@
               <table class="table user-list">
                 <thead>
                   <tr>
-                    <th><span>PR Number</span></th>
-                    <th><span>PR Date</span></th>
-                    <th><span>Description</span></th>
-                    <th><span>Department ID</span></th>
-                    <th><span>Last Updated</span></th>
-                    <th class="text-center"><span>Status</span></th>
+                    <th><span>Tender ID</span></th>
+                    <th><span>Tender Date</span></th>
+                    <th><span>Bid Open Date</span></th>
+                    <th><span>PR number</span></th>
+                    <th><span>Status</span></th>
+                    <th class="text-center"><span>Last Updated</span></th>
+                    <th><span>Exntended date 1</span></th>
+                    <th><span>Exntended date 2</span></th>
                     <th>&nbsp;</th>
                   </tr>
                 </thead>
@@ -106,26 +108,21 @@
                     exit();
                   }
                   $db->select_db('proknap');
-                  $cursor = $db->query("SELECT * FROM indent");
+                  $cursor = $db->query("SELECT * FROM tender");
                   if ($db->error) {
                     echo $db->error.PHP_EOL;
                   }
                   $meta_query_result = [];
                   while($val = $cursor->fetch_assoc()){
                     echo "<tr>";
-                    echo "<td>".$val['Pr_no']."</td>";
+                    echo "<td>".$val['T_id']."</td>";
                     //echo "<td>".$val['Pr_no']."</td>";
-                    echo "<td>".$val['Pr_date']."</td>";
-                    echo "<td>".$val['Descr']."</td>";
-                    echo "<td>".$val['Dept_id']."</td>";
+                    echo "<td>".$val['Tdate']."</td>";
+                    echo "<td>".$val['Bid_open_date']."</td>";
                     $res=mysqli_query($db,"SELECT Last_updated FROM tender where Pr_no=".$val[Pr_no]);
                     $val2=mysqli_fetch_array($res);
-                    if($val2){
-                      echo "<td>".$val2['Last_updated']."</td>";
-                    }else {
-                      echo "<td>NA</td>";
-                    }
-                    $res=mysqli_query($db,"SELECT Descr FROM status where Status_id = (SELECT Status_id from tender where Pr_no="."$val[Pr_no]".")");
+                    echo "<td>".$val2['Last_updated']."</td>";
+                    $res=mysqli_query($db,"SELECT Descr FROM status where Status_id = ".$val[Status_id]);
                     $val2=mysqli_fetch_array($res);
                     $status_id=mysqli_query($db,"SELECT Status_id from tender t where t.Pr_no=".$val[Pr_no]);
                     $val3=mysqli_fetch_array($status_id);
@@ -151,12 +148,19 @@
                       break;
 
                       default:
-                      echo "<td>"."<span class='label label-default'>NA</span>"."</td>";
-                      break;
+                      echo "Error";
                     }
+                    echo "<td>".$val['Last_updated']."</td>";
+                    $status_id=mysqli_query($db,"SELECT Ext_date1 from ext1 e where e.T_id=".$val['T_id']);
+                    $val3=mysqli_fetch_array($status_id);
+                    echo "<td>".$val3['Ext_date1']."</td>";
+                    $status_id=mysqli_query($db,"SELECT Ext_date2 from ext2 e where e.T_id=".$val['T_id']);
+                    $val3=mysqli_fetch_array($status_id);
+                    echo "<td>".$val3['Ext_date2']."</td>";
                     echo "</tr>";
                   }
                   $cursor->close();
+
                   ?>
                 </tbody>
               </table>

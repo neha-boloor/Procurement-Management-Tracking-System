@@ -36,7 +36,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   echo"connected to db";
   else
   echo "not";
-  echo $name;
+    echo $name;
   if(count($_POST)>0) {
     if($res=mysqli_query($db,"SELECT Auth_id FROM user where User_id='$name'")){
 
@@ -47,14 +47,26 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
       //$_SESSION["user_id"] = 1001;
       $_SESSION["user_name"] = $_POST["name"];
       $_SESSION['loggedin_time'] = time();
-      if($val['Auth_id']==4)
+      if($val['Auth_id']==1)
+      {
+        header("Location: https://localhost/proknap/indentor1.php");
+      }
+      elseif ($val['Auth_id']==2){
 
-      header("Location: https://localhost/proknap/indentor1.php");
+        header("Location: https://localhost/proknap/html/partials/procurementHead.php");
+      }
+      elseif($val['Auth_id']==3){
+
+        header("Location:  https://localhost/proknap/html/partials/dealingOfficer.php");
+      }
+      elseif($val['Auth_id']==4)
+      {
+        header("Location: https://localhost/proknap/indentor1.php");
+      }
+      else {
+        $message = "Invalid Username or Password!";
+      }
     }
-    else {
-      $message = "Invalid Username or Password!";
-    }
-  }
 
   if(isset($_SESSION["user_id"])) {
     if(!isLoginSessionExpired()) {

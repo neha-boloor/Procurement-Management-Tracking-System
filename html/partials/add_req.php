@@ -109,7 +109,7 @@ if($_SERVER['REQUEST_METHOD']=="POST" and(isset($_POST['submit1']))){
   }
 
 
-  $sql = "INSERT INTO tender ". "VALUES('$_POST[tender_id]',STR_TO_DATE('$_POST[tender_date]', '%Y-%m-%d'),STR_TO_DATE('$_POST[bid_open_date]', '%Y-%m-%d'),'$_POST[pr_no]',$_POST[status],STR_TO_DATE('$_POST[last_updated]', '%Y-%m-%d'))";
+  $sql = "INSERT INTO request ". "VALUES('$_SESSION[user_name]','$_POST[req_id]','$_POST[descr]','Pending',STR_TO_DATE('$_POST[last_updated]', '%Y-%m-%d'),'$_POST[item]','$_POST[qty]')";
 
   $retval = mysqli_query( $conn,$sql);
 
@@ -124,26 +124,6 @@ if($_SERVER['REQUEST_METHOD']=="POST" and(isset($_POST['submit1']))){
   header("Refresh:0");
 }
 
-  if($_SERVER['REQUEST_METHOD']=="POST" and(isset($_POST['submit2']))){
-    $dbhost = 'localhost';
-    $dbuser = 'root';
-    $dbpass = '';
-    $conn = mysqli_connect($dbhost,$dbuser,$dbpass,'proknap');
-
-    if(! $conn ) {
-      die('Could not connect: ' . mysql_error());
-    }
-    echo $_POST['status2']."</br>".$_POST['tid'];
-    if(isset($_POST['status2']))
-    $sql = "UPDATE tender SET Status_id="."'$_POST[status2]'"." WHERE T_id="."'$_POST[tid]'";
-
-    $retval = mysqli_query( $conn,$sql);
-
-    if(! $retval ) {
-      die('Could not enter data: ' . mysql_error());
-    }else{
-      echo "\t\tEntered data successfully\n";}
-  }
 
 ?>
 
@@ -156,14 +136,14 @@ if($_SERVER['REQUEST_METHOD']=="POST" and(isset($_POST['submit1']))){
         <div class="main-box no-header clearfix">
           <div class="main-box-body clearfix">
             <div class="table-responsive">
-              <form action="do-enter-tender.php" method="post">
+              <form action="add_req.php" method="post">
                 <table class="table user-list">
                   <thead>
                     <tr>
-                      <th><span>Tender ID</span></th>
-                      <th><span>Tender Date</span></th>
-                      <th><span>Bid Open Date</span></th>
-                      <th><span>PR Number</span></th>
+                      <th><span>Request ID</span></th>
+                      <th><span>Item</span></th>
+                      <th><span>Quantity</span></th>
+                      <th><span>Description</span></th>
                       <th><span>Last Updated</span></th>
                       <th>&nbsp;</th>
                     </tr>
@@ -171,16 +151,16 @@ if($_SERVER['REQUEST_METHOD']=="POST" and(isset($_POST['submit1']))){
                   <tbody>
                     <tr>
                       <td>
-                        <input type="text" name="tender_id"/>
+                        <input type="text" name="req_id"/>
                       </td>
                       <td>
-                        <input type="text" name="tender_date"/>
+                        <input type="text" name="item"/>
                       </td>
                       <td>
-                        <input type="text" name="bid_open_date"/>
+                        <input type="text" name="qty"/>
                       </td>
                       <td>
-                        <input type="text" name="pr_no"/>
+                        <input type="text" name="descr"/>
                       </td>
                       <td>
                         <input type="text" name="last_updated"/>
@@ -188,18 +168,7 @@ if($_SERVER['REQUEST_METHOD']=="POST" and(isset($_POST['submit1']))){
                     </tr>
                   </tbody>
                 </table>
-                <p align="center">
-                  <select name="status">
-                    <option value="">Select Status</option>
-                    <option value="1">Evaluation Sent Date</option>
-                    <option value="2">Evaluation Received date</option>
-                    <option value="3">Approval for Price bid Opening Sent date</option>
-                    <option value="4">Received from Finance date</option>
-                    <option value="5">Award approval sent date</option>
-                    <option value="6">Award approval received date</option>
-                    <option value="7">PO Date</option>
-                  </select>
-                </p>
+
               </br>
               <button type="submit" name="submit1" style="margin:auto; display:block;color:black;text-transform: uppercase;
               font-size: 0.675em;text-align:center;font-family:'Book Antiqua'; font-weight:400">Submit</button>
@@ -212,58 +181,11 @@ if($_SERVER['REQUEST_METHOD']=="POST" and(isset($_POST['submit1']))){
 </div>
 </div>
 
-<hr>
-<div class="container bootstrap snippet">
-  <div class="row">
-    <div class="col-lg-12">
-      <div class="main-box no-header clearfix">
-        <div class="main-box-body clearfix">
-          <div class="table-responsive">
-            <form action="do-enter-tender.php" method="post">
-              <table class="table user-list">
-                <thead>
-                  <tr>
-                    <th>Tender Id</th>
-                    <th>Status</th>
-                    <th>Extension date 1</th>
-                    <th>Extension date 2</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <td><input name="tid"/></td>
-                  <td>
-                    <select name="status2">
-                      <option value="">Select Status</option>
-                      <option value="1">Evaluation Sent Date</option>
-                      <option value="2">Evaluation Received date</option>
-                      <option value="3">Approval for Price bid Opening Sent date</option>
-                      <option value="4">Received from Finance date</option>
-                      <option value="5">Award approval sent date</option>
-                      <option value="6">Award approval received date</option>
-                      <option value="7">PO Date</option>
-                    </select>
-                  </td>
-                  <td><input name="ext1"/></td>
-                  <td><input name="ext2"/></td>
-                </tbody>
-              </table>
-              <button type="submit" name="submit2" style="margin:auto; display:block;color:black;text-transform: uppercase;
-              font-size: 0.675em;text-align:center;font-family:'Book Antiqua'; font-weight:400">Submit</button>
-            </br></br>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
 
 
 
 
 <script src="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<script type="text/javascript">
-
-</script>
+<script type="text/javascript"></script>
 </body>
 </html>
