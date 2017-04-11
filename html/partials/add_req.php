@@ -2,16 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <!--  This file has been downloaded from bootdey.com    @bootdey on twitter -->
-  <!--  All snippets are MIT license http://bootdey.com/license -->
-  <!--
-  The codes are free, but we require linking to our web site.
-  Why to Link?
-  A true story: one girl didn't set a link and had no decent date for two years, and another guy set a link and got a top ranking in Google!
-  Where to Put the Link?
-  home, about, credits... or in a good page that you want
-  THANK YOU MY FRIEND!
--->
+
 <title>table user list - Bootdey.com</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -98,19 +89,19 @@ a {
 <?php
 
 session_start();
-if($_SERVER['REQUEST_METHOD']=="POST" and(isset($_POST['submit1']))){
+if($_SERVER['REQUEST_METHOD']=="POST" and(isset($_POST['submit11']))){
+  $_SESSION['addReq'] = 'true';
   $dbhost = 'localhost';
   $dbuser = 'root';
   $dbpass = '';
   $conn = mysqli_connect($dbhost,$dbuser,$dbpass,'proknap');
-
+  $user=$_SESSION['user_name'];
+  $dept=$_SESSION['dept'];
   if(! $conn ) {
     die('Could not connect: ' . mysql_error());
   }
 
-
-  $sql = "INSERT INTO request ". "VALUES('$_SESSION[user_name]','$_POST[req_id]','$_POST[descr]','Pending',STR_TO_DATE('$_POST[last_updated]', '%Y-%m-%d'),'$_POST[item]','$_POST[qty]')";
-
+  $sql = "INSERT INTO pr (Pr_date,Dept,Item,Descr,Quantity) VALUES ( (SELECT CURDATE()), $dept, '$_POST[item]', '$_POST[descr]', '$_POST[qty]')";
   $retval = mysqli_query( $conn,$sql);
 
   if(! $retval ) {
@@ -120,8 +111,8 @@ if($_SERVER['REQUEST_METHOD']=="POST" and(isset($_POST['submit1']))){
   echo "\t\tEntered data successfully\n";
 
   mysqli_close($conn);
-  header("Refresh:0");
-  header("Refresh:0");
+  header("Refresh:2");
+  //header("Refresh:0");
 }
 
 
@@ -140,19 +131,15 @@ if($_SERVER['REQUEST_METHOD']=="POST" and(isset($_POST['submit1']))){
                 <table class="table user-list">
                   <thead>
                     <tr>
-                      <th><span>Request ID</span></th>
+
                       <th><span>Item</span></th>
                       <th><span>Quantity</span></th>
                       <th><span>Description</span></th>
-                      <th><span>Last Updated</span></th>
                       <th>&nbsp;</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td>
-                        <input type="text" name="req_id"/>
-                      </td>
                       <td>
                         <input type="text" name="item"/>
                       </td>
@@ -162,15 +149,12 @@ if($_SERVER['REQUEST_METHOD']=="POST" and(isset($_POST['submit1']))){
                       <td>
                         <input type="text" name="descr"/>
                       </td>
-                      <td>
-                        <input type="text" name="last_updated"/>
-                      </td>
                     </tr>
                   </tbody>
                 </table>
 
               </br>
-              <button type="submit" name="submit1" style="margin:auto; display:block;color:black;text-transform: uppercase;
+              <button type="submit" name="submit11" style="margin:auto; display:block;color:black;text-transform: uppercase;
               font-size: 0.675em;text-align:center;font-family:'Book Antiqua'; font-weight:400">Submit</button>
             </br></br>
           </form>

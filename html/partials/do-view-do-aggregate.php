@@ -60,7 +60,7 @@
   }
   .table thead tr th {
     border-bottom: 2px solid #e7ebee;
-    color:black;
+    /*color:black;*/
   }
   .table tbody tr td:first-child {
     font-size: 1.125em;
@@ -88,23 +88,14 @@
               <table class="table user-list">
                 <thead>
                   <tr>
-                    <th><span>Tender ID</span></th>
-                    <th><span>Tender Date</span></th>
-                    <th><span>Bid Open Date</span></th>
-                    <th><span>PR number</span></th>
-                    <th><span>Status</span></th>
-                    <th class="text-center"><span>Last Updated</span></th>
-                    <th><span>Exntended date 1</span></th>
-                    <th><span>Exntended date 2</span></th>
+                  <th><span>Dealing Officer Incharge</span></th>
+                    <th><span>Department ID</span></th>
+                    <th>Workload</th>
                     <th>&nbsp;</th>
                   </tr>
                 </thead>
                 <tbody>
                   <?php
-                  session_start();
-                  if(isset($_SESSION['tender'])){
-                    header("Refresh:0");
-                  }
                   error_reporting(E_ERROR);
                   $db = new mysqli('localhost', 'root');
                   if ($db->connect_errno) {
@@ -112,25 +103,26 @@
                     exit();
                   }
                   $db->select_db('proknap');
-                  $cursor = $db->query("SELECT * FROM tender");
+                  $cursor = $db->query("SELECT do,Dept_id,count(*) as total FROM indent group by do order by do");
                   if ($db->error) {
                     echo $db->error.PHP_EOL;
                   }
                   $meta_query_result = [];
                   while($val = $cursor->fetch_assoc()){
                     echo "<tr>";
-                    echo "<td>".$val['T_id']."</td>";
-                    //echo "<td>".$val['Pr_no']."</td>";
-                    echo "<td>".$val['Tdate']."</td>";
-                    echo "<td>".$val['Bid_open_date']."</td>";
-                    $res=mysqli_query($db,"SELECT Last_updated FROM tender where Pr_no=".$val[Pr_no]);
+                    echo "<td>".$val['do']."</td>";
+                    echo "<td>".$val['Dept_id']."</td>";
+                    echo "<td>".$val['total']."</td>";
+                  //  $res=mysqli_query($db,"SELECT Last_updated FROM tender where Pr_no=".$val[Pr_no]);
+                  //  $val2=mysqli_fetch_array($res);
+                    //if($val2){
+                      //echo "<td>".$val2['Last_updated']."</td>";
+                    //}else {
+                  //    echo "<td>NA</td>";
+                    //}
+                    $res=mysqli_query($db,"SELECT Descr FROM status where Status_id = (SELECT Status_id from tender where Pr_no="."$val[Pr_no]".")");
                     $val2=mysqli_fetch_array($res);
-                    echo "<td>".$val2['Last_updated']."</td>";
-                    $sql4 = "SELECT Descr FROM tender join status on tender.Status_id = status.Status_id where tender.Status_id=".$val[Status_id];
-                    //$res=mysqli_query($db,"SELECT Descr FROM status where Status_id = ".$val[Status_id]);
-                    $res=mysqli_query($db,$sql4);
-                    $val2=mysqli_fetch_array($res);
-                    $status_id=mysqli_query($db,"SELECT Status_id from tender t where t.Pr_no=".$val[Pr_no]);
+                    $status_id=mysqli_query($db,"SELECT Status_id from tender t where t.Pr_no="."'$val[Pr_no]'");
                     $val3=mysqli_fetch_array($status_id);
                     switch ($val3['Status_id']){
                       case 2:
@@ -154,24 +146,13 @@
                       break;
 
                       default:
-                      echo "Error";
+                      echo "<td>"."<span class='label label-default'>NA</span>"."</td>";
+                      break;
                     }
-                    echo "<td>".$val['Last_updated']."</td>";
-                    $status_id=mysqli_query($db,"SELECT Ext_date1 from ext1 e where e.T_id=".$val['T_id']);
-                    $val3=mysqli_fetch_array($status_id);
-                    echo "<td>".$val3['Ext_date1']."</td>";
-                    $status_id=mysqli_query($db,"SELECT Ext_date2 from ext2 e where e.T_id=".$val['T_id']);
-                    $val3=mysqli_fetch_array($status_id);
-                    echo "<td>".$val3['Ext_date2']."</td>";
                     echo "</tr>";
                   }
                   $cursor->close();
-
-                  header("Refresh:2");
                   ?>
-                  <script>
-                      window.opener.location.reload();
-                  </script>
                 </tbody>
               </table>
             </div>

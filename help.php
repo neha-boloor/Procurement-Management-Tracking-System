@@ -2,7 +2,7 @@
 
 <head>
     <title>
-    About Us| proKnap
+    proKnap | Help
     </title>
     <meta name="author" content="proKnap">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -42,9 +42,9 @@
     }
  ?>
 
-<body >
+<body style="background-image:url(http://localhost/proknap/images/back.png)">
     <section id="navbar" ng-include="<?php echo $nav;?>"></section>
-    <section id="about" ng-include="'http://localhost/proknap/html/partials/events.php'"></section>
+    <section id="about" ng-include="'http://localhost/proknap/html/partials/helppartial.php'"></section>
     <section id="footer" ng-include="'http://localhost/proknap/html/partials/footer.php'"></section>
 </body>
 

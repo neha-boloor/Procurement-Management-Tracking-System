@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>proKnap|Dealing Officer</title>
+  <title>proKnap | Admin</title>
   <link type="text/css" rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link type="image/png" rel="icon" href="http://localhost/proknap/images/logo-png.png" >
   <link type="text/css" href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
@@ -16,13 +16,14 @@
   <link type="text/css" rel="stylesheet" href="http://localhost/proknap/loginstyle.css">
   <style type="text/css">
 
+  <style>
+
   body {
     position: relative;
   }
   a{
     color:white;
   }
-
   a.left{
     background-color: gray;
   }
@@ -41,10 +42,9 @@
   #section3 {color: #808080; background-color: #e3d6c6;font-family: Verdana, Geneva, sans-serif;}
   #section4 {color: #808080; background-color: #e3d6c6;font-family: Verdana, Geneva, sans-serif;}
   #section5 {color: #808080; background-color: #e3d6c6;font-family: Verdana, Geneva, sans-serif;}
-  #section6 {color: #808080; background-color: #e3d6c6;font-family: Verdana, Geneva, sans-serif;}
 
   @media screen and (max-width: 810px) {
-    #section1, #section2, #section3,#section4, #section5{
+    #section1, #section2{
       margin-left: 150px;
     }
   }
@@ -62,7 +62,6 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
   foreach ($_POST as $key => $value){
     echo "{$key} = {$value}\r\n";
   }
-  header("Refresh:0");
 }
 ?>
 
@@ -125,12 +124,16 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
                         else
                         echo "not connected to db";
                     }
+                    if(isset($_SESSION['assigned'])){
+                        header("Refresh:2");
+                        unset($_SESSION['assigned']);
+                    }
                     ?>
                 </li>
                 <li></br></li>
             </ul>
           </li>
-          <li class="nav navbar-nav cuprum white font20"><a name="logout" href="http://localhost/proknap/html/partials/logout.php">Logout</a></li>
+          <li class="nav navbar-nav cuprum white font20"><a  name="logout" href="http://localhost/proknap/html/partials/logout.php">Logout</a></li>
           <li class="nav navbar-nav cuprum white font20"><a href="http://localhost/proknap/help.php">Help</a></li>
         </ul>
 
@@ -142,66 +145,34 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
     <div class="row">
       <nav class="col-sm-3" id="myScrollspy" >
         <ul class="nav nav-pills nav-stacked" style="font-weight:900;">
-          <li class="active"><a class="left" href="#section1">Pending PRs</a></li>
-          <li ><a name="completed" class="left" href="#section2" >Completed PRs</a></li-->
-          <li ><a class="left" href="#section3" >Float Tenders</a></li>
-          <li ><a class="left" href="#section4" >Add Extension Date</a></li>
-          <li ><a class="left" href="#section5" >Change Tender Status</a></li>
-          <li ><a class="left" href="#section6" >Select Final Tender</a></li>
+          <li class="active"><a class="left" href="#section1">View Existing Users</a></li>
+          <li ><a class="left" href="#section2">Add Users</a></li>
+          <!--li ><a class="left" href="#section4">//View Dealing Officers' Workload</a></li>
+          <li ><a class="left" href="#section5">//Assign Tasks</a></li-->
 
 
         </ul>
       </nav>
       <div class="col-sm-9">
-        <div id="section1">
-          <h1 style="margin-left:20px;margin-top:30px;padding-top:30px;">Pending PRs</h1>
+        <div id="section1" style="height:650px;">
+          <h1 style="margin-left:20px;margin-top:30px;padding-top:30px;">View Users</h1>
           <p style="margin-left:20px;margin-top:10px;">
-            <object type="text/html" data="html/partials/view_pend.php" width="800px" height="600px" style="overflow:auto;border:0px ridge blue">
+            <object type="text/html" data="http://localhost/proknap/html/partials/view-users.php" width="800px" height="500px" style="overflow:auto;border:0px ridge blue">
             </object>
           </p>
         </div>
-        <div id="section2">
-          <h1 style="margin-left:20px;margin-top:50px; padding-top:30px;">Completed PRs</h1>
-          <p>
-            <object type="text/html" data="html/partials/view_done.php" width="800px" height="600px" style="overflow:auto;border:0px ridge blue">
-            </object>
-          </p>
-        </div>
-        <div id="section3" style="height:800px;">
-          <h1 style="margin-left:20px;margin-top:50px; padding-top:30px;">Float Tenders</h1>
-          <p>
-              <object type="text/html" data="html/partials/do-float.php" width="800px" height="650px" style="overflow:auto;border:0px ridge blue">
+          <div id="section2" style="height:650px;">
+            <h1 style="margin-left:20px;margin-top:30px;padding-top:30px;">Add Users</a></li>
+            <p style="margin-left:20px;margin-top:10px;">
+              <hr>
+              <object type="text/html" data="http://localhost/proknap/html/partials/add-user.php" width="810px" height="600px" style="overflow:auto;border:0px ridge blue">
               </object>
             </p>
           </div>
-          <div id="section4" style="height:600px;">
-            <h1 style="margin-left:20px;margin-top:50px; padding-top:30px;">Add Extention Dates</h1>
-            <p>
-              <object type="text/html" data="html/partials/add-extension-date.php" width="800px" height="500px" style="overflow:auto;border:0px ridge blue">
-              </object>
-            </p>
-          </div>
-          <div id="section5" style="height:600px;">
-            <h1 style="margin-left:20px;margin-top:50px; padding-top:30px;">Change Status</h1>
-            <p>
-              <object type="text/html" data="html/partials/change-status.php" width="800px" height="500px" style="overflow:auto;border:0px ridge blue">
-              </object>
-            </p>
-          </div>
-          <div id="section6" style="height:600px;">
-            <h1 style="margin-left:20px;margin-top:50px; padding-top:30px;">Finalise</h1>
-            <p>
-              <object type="text/html" data="html/partials/finalise.php" width="800px" height="500px" style="overflow:auto;border:0px ridge blue">
-              </object>
-            </p>
-          </div>
-
-        </br>
       </br>
-
-    </div>
+    </br>
   </div>
 </div>
-
+</div>
 </body>
 </html>

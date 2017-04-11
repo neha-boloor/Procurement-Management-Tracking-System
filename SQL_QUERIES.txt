@@ -1,0 +1,106 @@
+dealingOfficer.php
+$sql = "SELECT Role from user join authorisation on user.Auth_id=authorisation.Auth_id where user.Auth_id=".$_SESSION['auth'];
+
+add_req.php
+$sql = "INSERT INTO pr (Pr_date,Dept,Item,Descr,Quantity) VALUES ( (SELECT CURDATE()), $dept, '$_POST[item]', '$_POST[descr]', '$_POST[qty]')";
+
+do-view-do-aggregate.php
+$res=mysqli_query($db,"SELECT Descr FROM status where Status_id = (SELECT Status_id from tender where Pr_no="."$val[Pr_no]".")");
+"SELECT Status_id from tender t where t.Pr_no="."'$val[Pr_no]'"
+$cursor = $db->query("SELECT do,Dept_id,count(*) as total FROM indent group by do order by do");
+
+add-extension.php
+$sql = "insert into ext1 values ('$_POST[tid]',STR_TO_DATE('$_POST[ext1]', '%Y-%m-%d'))";
+$sql = "insert into ext2 values ('$_POST[tid2]',STR_TO_DATE('$_POST[ext2]', '%Y-%m-%d'))";
+
+do-view-do.php
+$res=mysqli_query($db,"SELECT Descr FROM status where Status_id = (SELECT Status_id from tender where Pr_no="."$val[Pr_no]".")");
+$status_id=mysqli_query($db,"SELECT Status_id from tender t where t.Pr_no="."'$val[Pr_no]'");
+$cursor = $db->query("SELECT * FROM indent order by do");
+
+
+do-enter-tender.php
+$sql = "INSERT INTO tender ". "VALUES('$_POST[tender_id]',STR_TO_DATE('$_POST[tender_date]', '%Y-%m-%d'),STR_TO_DATE('$_POST[bid_open_date]', '%Y-%m-%d'),'$_POST[pr_no]',$_POST[status],STR_TO_DATE('$_POST[last_updated]', '%Y-%m-%d'))";
+$sql1 = "UPDATE tender SET Status_id="."'$_POST[status2]'"." WHERE T_id="."'$_POST[tid]'";
+$sql2 = "select * from ext1 where "."'$_POST[tid]'"."=T_id";
+$sql2 = "insert into ext1 values ("."'$_POST[tid]'".","."'$_POST[ext1]'".")";
+$sql3 = "select * from ext2 where '$_POST[tid]'=T_id";
+  $sql3 = "insert into ext2 values ("."'$_POST[tid]'".","."'$_POST[ext2]'".")";
+
+  do-float.php
+  $sql = "INSERT INTO tender VALUES(".$_POST['tender'].","."(SELECT CURDATE())".","."STR_TO_DATE('$_POST[bid]', '%Y-%m-%d')".",".$_POST['pr'].",3,"."(SELECT CURDATE())".")";
+
+  do-view-card.php
+  $db->query("SELECT Pr_no,T_id,status.Descr,Status_updated_date from tender join status on tender.Status=status.Status_id where Pr_no=".$_POST['indent_view']);
+
+ finalise.php
+ $sql = "UPDATE tender SET Status=10 WHERE T_id="."'$_POST[req_id]'"."and Pr_no=".$_SESSION['pr'];
+ $sql = "DELETE from tender where T_id <> '$_POST[req_id]' and Pr_no='$_SESSION[pr]'";
+ $cursor = $db->query("SELECT DISTINCT Pr_no from pr");
+
+
+ eval.php
+ $sql = "UPDATE tender SET Status=6 WHERE T_id=".$_POST['tid']." and Pr_no=".$_SESSION['pr'];
+ unset($_SESSION['pr']);
+
+
+ assign-task.php
+ $sql = "insert into assign values($req,'$_POST[do]')";
+ $cursor = $db->query("SELECT Pr_no from pr where Pr_no NOT IN (select Pr_no from assign)");
+
+
+ change-status.php
+ $r="SELECT Status FROM tender WHERE T_id="."'$_POST[req_id]'";
+ $sql = "UPDATE tender SET Status=$s WHERE T_id="."'$_POST[req_id]'";
+
+ do-view-tender.php
+ $res=mysqli_query($db,"SELECT Last_updated FROM tender where Pr_no=".$val[Pr_no]);
+ $val2=mysqli_fetch_array($res);
+ $sql4 = "SELECT Descr FROM tender join status on tender.Status_id = status.Status_id where tender.Status_id=".$val[Status_id];
+ $status_id=mysqli_query($db,"SELECT Status_id from tender t where t.Pr_no=".$val[Pr_no]);
+ $status_id=mysqli_query($db,"SELECT Ext_date1 from ext1 e where e.T_id=".$val['T_id']);
+ $status_id=mysqli_query($db,"SELECT Ext_date2 from ext2 e where e.T_id=".$val['T_id']);
+
+
+ navbar.php
+ $res=mysqli_query($db,"SELECT * FROM user where User_id='$name'"
+
+ indentor1.php
+ $sql = "SELECT Role from user join authorisation on user.Auth_id=authorisation.Auth_id where user.Auth_id=".$_SESSION['auth'];
+
+ procurementHead.php
+ $sql = "SELECT Role from user join authorisation on user.Auth_id=authorisation.Auth_id where user.Auth_id=".$_SESSION['auth'];
+
+ pr_unassigned.php
+ $cursor = $db->query("SELECT * FROM pr where Pr_no NOT IN (SELECT Pr_no from assign)");
+
+add-entension.php
+$cursor = $db->query("SELECT T_id FROM tender where T_id NOT IN (select T_id from ext1)");
+$cursor = $db->query("SELECT T_id FROM ext1 where T_id NOT IN (SELECT T_id FROM ext2)");
+
+pr-workload.php
+$cursor = $db->query("SELECT assign.DO,count(*) as count FROM pr join assign on pr.Pr_no=assign.Pr_no group by DO order by count ");
+
+
+DELIMITER $$
+--
+-- Procedures
+--
+CREATE DEFINER=`root`@`localhost` PROCEDURE `pr_view` (IN `flag` INT(11))  begin if (flag<10) then select * from `pr` where (`pr`.`Pr_no` in (select `tender`.`Pr_no` from `tender` where (`tender`.`Status` <> 12)) or (not(`pr`.`Pr_no` in (select `tender`.`Pr_no` from `tender`)))) ; else select * from `pr` where (`pr`.`Pr_no` in (select `tender`.`Pr_no` from `tender` where (`tender`.`Status` = 12))); end if; end$$
+
+DELIMITER ;
+html/partials/view_pend.php:121:                    $cursor = $db->query("call pr_view(5)");
+html/partials/view_done.php:121:                        $cursor = $db->query("call pr_view(15)");
+
+-- Triggers `tender`
+--
+DELIMITER $$
+CREATE TRIGGER `status` BEFORE UPDATE ON `tender` FOR EACH ROW begin IF NEW.Status <> OLD.Status THEN  SET NEW.Status_updated_date =(select CURDATE()); END IF; END
+$$
+DELIMITER ;
+
+
+VIEW
+create view pr_view as SELECT pr.Pr_no, pr.Pr_date, pr.Dept, pr.Item, pr.Descr, pr.Quantity, assign.DO from pr join assign on pr.Pr_no=assign.Pr_no;
+
+begin if (flag<10) then select * from `pr`,`assign` where (`pr`.`Pr_no` = `assign`.`Pr_no`) and (`pr`.`Pr_no` in (select `tender`.`Pr_no` from `tender` where (`tender`.`Status` <> 12)) or (not(`pr`.`Pr_no` in (select `tender`.`Pr_no` from `tender`)))) ; else select * from `pr` where (`pr`.`Pr_no` in (select `tender`.`Pr_no` from `tender` where (`tender`.`Status` = 12))); end if; end
