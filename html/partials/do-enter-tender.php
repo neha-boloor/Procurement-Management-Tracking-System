@@ -2,16 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <!--  This file has been downloaded from bootdey.com    @bootdey on twitter -->
-  <!--  All snippets are MIT license http://bootdey.com/license -->
-  <!--
-  The codes are free, but we require linking to our web site.
-  Why to Link?
-  A true story: one girl didn't set a link and had no decent date for two years, and another guy set a link and got a top ranking in Google!
-  Where to Put the Link?
-  home, about, credits... or in a good page that you want
-  THANK YOU MY FRIEND!
--->
+
 <title>table user list - Bootdey.com</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -65,7 +56,7 @@ body{
   padding-top: 3px;
   margin-left: 60px;
 }
-a {
+a{
   color: #3498db;
   outline: none!important;
 }
@@ -96,9 +87,11 @@ a {
 </head>
 
 <?php
-
+error_reporting();
 session_start();
+$msg="";
 if($_SERVER['REQUEST_METHOD']=="POST" and(isset($_POST['submit1']))){
+  $_SESSION['tender']=True;
   $dbhost = 'localhost';
   $dbuser = 'root';
   $dbpass = '';
@@ -121,41 +114,75 @@ if($_SERVER['REQUEST_METHOD']=="POST" and(isset($_POST['submit1']))){
 
   mysqli_close($conn);
   header("Refresh:0");
-  header("Refresh:0");
 }
 
-  if($_SERVER['REQUEST_METHOD']=="POST" and(isset($_POST['submit2']))){
-    $dbhost = 'localhost';
-    $dbuser = 'root';
-    $dbpass = '';
-    $conn = mysqli_connect($dbhost,$dbuser,$dbpass,'proknap');
+if($_SERVER['REQUEST_METHOD']=="POST" and(isset($_POST['submit2']))){
+  $_SESSION['tender']=True;
+  $dbhost = 'localhost';
+  $dbuser = 'root';
+  $dbpass = '';
+  $conn = mysqli_connect($dbhost,$dbuser,$dbpass,'proknap');
 
-    if(! $conn ) {
-      die('Could not connect: ' . mysql_error());
-    }
-    echo $_POST['status2']."</br>".$_POST['tid'];
-    if(isset($_POST['status2']))
-    $sql = "UPDATE tender SET Status_id="."'$_POST[status2]'"." WHERE T_id="."'$_POST[tid]'";
-
-    $retval = mysqli_query( $conn,$sql);
-
-    if(! $retval ) {
-      die('Could not enter data: ' . mysql_error());
-    }else{
-      echo "\t\tEntered data successfully\n";}
+  if(! $conn ) {
+    die('Could not connect: ' . mysql_error());
   }
+
+  if(isset($_POST['status2']) and $_POST['status2']!=""){
+    echo "stat";
+    $sql1 = "UPDATE tender SET Status_id="."'$_POST[status2]'"." WHERE T_id="."'$_POST[tid]'";
+    $retval1 = mysqli_query( $conn,$sql1);
+    if(! $retval1 ) {
+      $msg = "'\t\tCould not update status of Tender.\n'";
+    }else{
+      $msg = "\t\tStatus successfully modified.\n";
+    }
+  }
+
+  if (isset($_POST['ext1']) and $_POST['ext1']!="") {
+    echo "ext1";
+    $sql2 = "select * from ext1 where "."'$_POST[tid]'"."=T_id";
+    $retval2 = mysqli_query( $conn,$sql2);
+    if($retval2->num_rows !== 0) {
+      $msg = "\t\tDate already extended once. \nKindly enter in next column.\n";
+    }else{
+      $sql2 = "insert into ext1 values ("."'$_POST[tid]'".","."'$_POST[ext1]'".")";
+      $retval2 = mysqli_query( $conn,$sql2);
+      if($retval2){
+      $msg =  "\t\tDate successfully extended.\n";
+      }
+    }
+  }
+
+  if (isset($_POST['ext2']) and $_POST['ext2']!="") {
+    echo "ext2";
+    $sql3 = "select * from ext2 where '$_POST[tid]'=T_id";
+    $retval3 = mysqli_query( $conn,$sql3);
+    if($retval3->num_rows !== 0) {
+      $msg = "'\t\tDate cannot be extended further.\n'";
+    }else{
+      $sql3 = "insert into ext2 values ("."'$_POST[tid]'".","."'$_POST[ext2]'".")";
+      $retval3 = mysqli_query( $conn,$sql3);
+      if($retval3){
+      $msg =  "\t\tDate successfully extended.\n";
+      }
+    }
+  }
+
+    header("Refresh:0");
+    header("Refresh:0");
+}
 
 ?>
 
 <body>
   <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
   <hr>
-  <div class="container bootstrap snippet">
-    <div class="row">
-      <div class="col-lg-12">
-        <div class="main-box no-header clearfix">
-          <div class="main-box-body clearfix">
-            <div class="table-responsive">
+  <div class="container bootstrap snippet" style="width:800px; height:250px;">
+    <div class="row" style="width:800px; height:250px;">
+      <div class="col-lg-12" style="width:800px; height:250px;">
+        <div class="main-box no-header clearfix" style="width:800px; height:250px;">
+          <div class="main-box-body clearfix" style="width:800px; height:250px;">
+            <div class="table-responsive" style="width:800px; height:250px;">
               <form action="do-enter-tender.php" method="post">
                 <table class="table user-list">
                   <thead>
@@ -203,7 +230,7 @@ if($_SERVER['REQUEST_METHOD']=="POST" and(isset($_POST['submit1']))){
               </br>
               <button type="submit" name="submit1" style="margin:auto; display:block;color:black;text-transform: uppercase;
               font-size: 0.675em;text-align:center;font-family:'Book Antiqua'; font-weight:400">Submit</button>
-            </br></br>
+            </br>
           </form>
         </div>
       </div>
@@ -211,14 +238,16 @@ if($_SERVER['REQUEST_METHOD']=="POST" and(isset($_POST['submit1']))){
   </div>
 </div>
 </div>
-
 <hr>
-<div class="container bootstrap snippet">
-  <div class="row">
-    <div class="col-lg-12">
-      <div class="main-box no-header clearfix">
-        <div class="main-box-body clearfix">
-          <div class="table-responsive">
+<h1 style="margin-left:20px; color:#808080;">Edit Tenders</h1>
+<hr>
+<?php echo "$msg"; ?>
+<div class="container bootstrap snippet" style="width:800px;">
+  <div class="row" style="width:800px;">
+    <div class="col-lg-12" style="width:800px;">
+      <div class="main-box no-header clearfix" style="width:800px;">
+        <div class="main-box-body clearfix" style="width:800px;">
+          <div class="table-responsive" style="width:800px;">
             <form action="do-enter-tender.php" method="post">
               <table class="table user-list">
                 <thead>

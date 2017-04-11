@@ -101,6 +101,10 @@
                 </thead>
                 <tbody>
                   <?php
+                  session_start();
+                  if(isset($_SESSION['tender'])){
+                    header("Refresh:0");
+                  }
                   error_reporting(E_ERROR);
                   $db = new mysqli('localhost', 'root');
                   if ($db->connect_errno) {
@@ -122,7 +126,9 @@
                     $res=mysqli_query($db,"SELECT Last_updated FROM tender where Pr_no=".$val[Pr_no]);
                     $val2=mysqli_fetch_array($res);
                     echo "<td>".$val2['Last_updated']."</td>";
-                    $res=mysqli_query($db,"SELECT Descr FROM status where Status_id = ".$val[Status_id]);
+                    $sql4 = "SELECT Descr FROM tender join status on tender.Status_id = status.Status_id where tender.Status_id=".$val[Status_id];
+                    //$res=mysqli_query($db,"SELECT Descr FROM status where Status_id = ".$val[Status_id]);
+                    $res=mysqli_query($db,$sql4);
                     $val2=mysqli_fetch_array($res);
                     $status_id=mysqli_query($db,"SELECT Status_id from tender t where t.Pr_no=".$val[Pr_no]);
                     $val3=mysqli_fetch_array($status_id);
@@ -161,7 +167,11 @@
                   }
                   $cursor->close();
 
+                  header("Refresh:2");
                   ?>
+                  <script>
+                      window.opener.location.reload();
+                  </script>
                 </tbody>
               </table>
             </div>

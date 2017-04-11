@@ -1,5 +1,5 @@
 <article ng-controller="eventCtrl">
-    <div class="container-fluid text-center" style="background:#e74c3c; padding-top: 100px; padding-bottom: 100px;">
+    <div class="container-fluid text-center" style="background:#e74c3c; padding-top: 60px; padding-bottom: 100px;">
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="pacifico white" style="text-shadow: 0 5px 5px #222;">Department of Information Technology</h1>

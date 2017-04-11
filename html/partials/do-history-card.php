@@ -2,16 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <!--  This file has been downloaded from bootdey.com    @bootdey on twitter -->
-  <!--  All snippets are MIT license http://bootdey.com/license -->
-  <!--
-  The codes are free, but we require linking to our web site.
-  Why to Link?
-  A true story: one girl didn't set a link and had no decent date for two years, and another guy set a link and got a top ranking in Google!
-  Where to Put the Link?
-  home, about, credits... or in a good page that you want
-  THANK YOU MY FRIEND!
--->
+
 <title>table user list - Bootdey.com</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -99,12 +90,12 @@ a {
 <body>
   <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
   <hr>
-  <div class="container bootstrap snippet">
-    <div class="row">
-      <div class="col-lg-12">
-        <div class="main-box no-header clearfix">
-          <div class="main-box-body clearfix">
-            <div class="table-responsive">
+  <div class="container bootstrap snippet"  style="width:800px;">
+    <div class="row"  style="width:800px;">
+      <div class="col-lg-12"  style="width:800px;">
+        <div class="main-box no-header clearfix"  style="width:800px;">
+          <div class="main-box-body clearfix"  style="width:800px;">
+            <div class="table-responsive"  style="width:800px;">
               <table class="table user-list">
                 <thead>
                   <tr>
