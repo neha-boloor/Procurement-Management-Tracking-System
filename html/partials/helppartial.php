@@ -48,7 +48,11 @@
 	</ul> <!-- cd-faq-group -->
 </br>
 </br>
+
 <a href="User_manual.pdf" download style="color:black; font-weight:bold;"> Download User Manual </a></br>
+
+<a href="#" download style="color:black; font-weight:bold;"> Download User Manual </a></br>
+
 </br></br>
 </br></br>
 </br>

@@ -90,12 +90,21 @@ a{
 <body>
   <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
   <hr>
+
   <div class="container bootstrap snippet" style="width:800px; height:850px;">
     <div class="row" style="width:800px; height:850px;">
       <div class="col-lg-12" style="width:800px; height:850px;">
         <div class="main-box no-header clearfix" style="width:800px; height:850px;">
           <div class="main-box-body clearfix" style="width:800px; height:850px;">
             <div class="table-responsive" style="width:800px; height:850px;">
+
+  <div class="container bootstrap snippet" style="width:800px; height:250px;">
+    <div class="row" style="width:800px; height:250px;">
+      <div class="col-lg-12" style="width:800px; height:250px;">
+        <div class="main-box no-header clearfix" style="width:800px; height:250px;">
+          <div class="main-box-body clearfix" style="width:800px; height:250px;">
+            <div class="table-responsive" style="width:800px; height:250px;">
+
               <form action="do-float.php" method="post">
                 <table class="table user-list">
                   <thead>
